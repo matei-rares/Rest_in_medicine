@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+// fiecare rpc are un tip de request si un tip de response
+//request si response sunt mesaje (message)
+// in metoda din server se va folosi request-ul pentru a extrage datele necesare
+// la client se primeste tipul de response cu atributele necesare
+service IDMService {
+  rpc CreateUser (UserCreateRequest) returns (TokenResponse){}
+  rpc Login (UserLoginRequest) returns (TokenResponse){}
+  rpc Logout (TokenRequest) returns (StringResponse){}
+  rpc Authorize (TokenRequest) returns (TokenResponse){}
+  rpc DeleteUser (TokenRequest) returns (StringResponse){}
+
+  rpc ChangePassword (UserChangePasswordRequest) returns (TokenResponse){}
+}
+
+message UserLoginRequest{
+  string username=1;
+  string password=2;
+}
+
+message UserCreateRequest{
+  string token=1;
+  string username=2;
+  string password=3;
+  string role=4;
+}
+message TokenRequest{
+  string token=1;
+}
+message UserChangePasswordRequest{
+  string token=1;
+  string password=2;
+}
+message TokenResponse{
+  string token=1;
+  string message=2;
+  string role=3;
+  string sub=4;
+}
+
+message StringResponse{
+  string message=1;
+}
+

@@ -1,0 +1,36 @@
+div {
+    margin-left: 10px;
+}
+
+div > div {
+    margin-left: 20px;
+}
+
+div label {
+}
+
+div input {
+}
+
+label {
+    font-family: 'YourDesiredFont', sans-serif;
+}
+
+pre {
+    font-family: inherit;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+
+.labelDreapta1{
+    margin-right: 86px;
+}
+
+.labelDreapta3{
+    margin-right: 10px;
+}
+.labelDreapta2{
+    margin-right: 97px;
+}

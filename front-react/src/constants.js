@@ -1,0 +1,1 @@
+export const gateway="http://localhost:5000/"
